@@ -29,7 +29,7 @@ public class AddressesController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Addresses> listAddresses() {
-        return addressesService.listAdresses();
+        return addressesService.listAddresses();
     }
 
     @GetMapping("/{id}")
