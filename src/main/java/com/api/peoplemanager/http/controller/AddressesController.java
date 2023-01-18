@@ -2,6 +2,7 @@ package com.api.peoplemanager.http.controller;
 
 import com.api.peoplemanager.entity.Addresses;
 import com.api.peoplemanager.service.AddressesService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ public class AddressesController {
     @Autowired
     private AddressesService addressesService;
 
-//    @Autowired
-//    private ModelMapper modelMapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -28,7 +29,7 @@ public class AddressesController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Addresses> listAddresses() {
-        return addressesService.listPeople();
+        return addressesService.listAdresses();
     }
 
     @GetMapping("/{id}")
@@ -49,14 +50,14 @@ public class AddressesController {
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado"));
     }
 
-//    @PutMapping("{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void updateAddress(@PathVariable("id") Long id, @RequestBody Addresses addresses) {
-//        addressesService.searchById(id)
-//                .map(addressesBase -> {
-//                    modelMapper.map(addresses, addressesBase);
-//                      addressesService.salvar(addressesBase);
-//                    return Void.TYPE;
-//                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado"));
-//    }
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateAddress(@PathVariable("id") Long id, @RequestBody Addresses addresses) {
+        addressesService.searchById(id)
+                .map(addressesBase -> {
+                    modelMapper.map(addresses, addressesBase);
+                    addressesService.salvar(addressesBase);
+                    return Void.TYPE;
+                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado"));
+    }
 }
