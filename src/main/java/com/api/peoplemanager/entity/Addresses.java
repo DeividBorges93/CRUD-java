@@ -27,9 +27,9 @@ public class Addresses implements Serializable {
     private String zipCode;
 
     @Column(name = "number", nullable = false)
-    private Number number;
+    private String number;
 
     @Column(name = "city", nullable = false)
-    private Number city;
+    private String city;
 
 }
