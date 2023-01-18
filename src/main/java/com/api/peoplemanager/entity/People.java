@@ -27,6 +27,6 @@ public class People implements Serializable {
     private String birthDate;
 
     @Column(name = "addressId", nullable = false)
-    private Number addressId;
+    private String addressId;
 
 }

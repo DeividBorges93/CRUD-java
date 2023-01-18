@@ -18,7 +18,7 @@ public class AddressesService {
         return addressesRepository.save(addresses);
     }
 
-    public List<Addresses> listPeople() {
+    public List<Addresses> listAdresses() {
         return addressesRepository.findAll();
     }
 

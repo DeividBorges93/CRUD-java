@@ -2,6 +2,7 @@ package com.api.peoplemanager.http.controller;
 
 import com.api.peoplemanager.entity.People;
 import com.api.peoplemanager.service.PeopleService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,8 +17,8 @@ public class PeopleController {
     @Autowired
     private PeopleService peopleService;
 
-//    @Autowired
-//    private ModelMapper modelMapper;
+    @Autowired
+    private ModelMapper modelMapper;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -49,14 +50,14 @@ public class PeopleController {
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
     }
 
-//    @PutMapping("{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void updatePeople(@PathVariable("id") Long id, @RequestBody People people) {
-//        peopleService.searchById(id)
-//                .map(peopleBase -> {
-//                    modelMapper.map(people, peopleBase);
-//                      peopleService.salvar(peopleBase);
-//                    return Void.TYPE;
-//                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
-//    }
+    @PutMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updatePeople(@PathVariable("id") Long id, @RequestBody People people) {
+        peopleService.searchById(id)
+                .map(peopleBase -> {
+                    modelMapper.map(people, peopleBase);
+                    peopleService.salvar(peopleBase);
+                    return Void.TYPE;
+                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));
+    }
 }
