@@ -29,4 +29,7 @@ public class Addresses implements Serializable {
     @Column(name = "number", nullable = false)
     private Number number;
 
+    @Column(name = "city", nullable = false)
+    private Number city;
+
 }
