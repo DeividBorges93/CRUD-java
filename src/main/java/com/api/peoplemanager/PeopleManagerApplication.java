@@ -1,0 +1,21 @@
+package com.api.peoplemanager;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+// import org.springframework.context.annotation.Bean;
+
+@SpringBootApplication
+public class PeopleManagerApplication {
+
+//	@Bean
+//	public ModelMapper modelMapper() {
+//		ModelMapper modelMapper = new Modelmapper();
+//		modelmapper.getConfiguration().setSkipNullEnabled(true);
+//		return modelMapper;
+//	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(PeopleManagerApplication.class, args);
+	}
+
+}
