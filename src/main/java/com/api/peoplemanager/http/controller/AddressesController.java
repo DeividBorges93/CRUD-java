@@ -43,19 +43,19 @@ public class AddressesController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void removeAddress(@PathVariable("id") Long id) {
         addressesService.searchById(id)
-                .map(people -> {
-                    addressesService.removeById(people.getId());
+                .map(address -> {
+                    addressesService.removeById(address.getId());
                     return Void.TYPE;
                 }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado"));
     }
 
 //    @PutMapping("{id}")
 //    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void updateAddress(@PathVariable("id") Long id, @RequestBody People people) {
-//        peopleService.searchById(id)
-//                .map(peopleBase -> {
-//                    modelMapper.map(people, peopleBase);
-//                      peopleService.salvar(peopleBase);
+//    public void updateAddress(@PathVariable("id") Long id, @RequestBody Addresses addresses) {
+//        addressesService.searchById(id)
+//                .map(addressesBase -> {
+//                    modelMapper.map(addresses, addressesBase);
+//                      addressesService.salvar(addressesBase);
 //                    return Void.TYPE;
 //                }).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Endereço não encontrado"));
 //    }
