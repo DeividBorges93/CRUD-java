@@ -6,7 +6,7 @@
  - Rota para editar uma pessoa e um endereço pelo id
  - Rota para remover uma pessoa e um endereço pelo id
 
-## Ferramentas e bibliotecas utilizdas
+## Ferramentas e bibliotecas utilizadas
 
 - ![Java Badge](https://img.shields.io/badge/-Java-black?style=flat-square&logo=java)
 - ![Spring Badge](https://img.shields.io/badge/-Spring-black?style=flat-square&logo=spring)
@@ -30,6 +30,8 @@
 - [ ] Separar sequencia do ID de endereço e pessoa
 - [ ] Documentar API com swagger
 - [ ] Frontend para consumir os end-points
+- [ ] Testes unitários
+- [ ] Testes de integração
 
 ## Pré-requisitos para rodar a aplicação
 
