@@ -57,7 +57,7 @@ caminho: CRUD-java/src/main/java
 PeopleManagerAplication.java
 ~~~
 
-## End points People
+## End points
 
 - POST - Cadastro de pessoa
 > http://localhost:8080/people
@@ -105,7 +105,7 @@ Resposta da requisição:
 }
 ~~~
 
-GET - Lista de pessoas
+- GET - Lista de pessoas
 > http://localhost:8080/people
 ~~~Java
 Resposta da requisição:
@@ -126,7 +126,7 @@ Resposta da requisição:
 ]
 ~~~
 
-GET - Lista de endereços
+- GET - Lista de endereços
 > http://localhost:8080/address
 ~~~Java
 Resposta da requisição:
